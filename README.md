@@ -1,116 +1,79 @@
-# The Dinky theme
+---
+layout: default
+---
 
-[![.github/workflows/ci.yaml](https://github.com/pages-themes/dinky/actions/workflows/ci.yaml/badge.svg)](https://github.com/pages-themes/dinky/actions/workflows/ci.yaml) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-dinky.svg)](https://badge.fury.io/rb/jekyll-theme-dinky)
+# The Star System
 
-*Dinky is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/dinky), or even [use it today](#usage).*
+## Authors:
+Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
 
-![Thumbnail of Dinky](thumbnail.png)
+## Abstract:
 
-## Usage
+Successful actors are able to make a living out of their acting career, and even if this seems normal for any other job, in the movie industry, a huge part of the actors' population are 'one-hit wonders', actors that starred only once and did not manage to make their career take off. A minority of actors, instead, detains most of the assigned jobs,and this generates a natural power law in actors' movie appearances. The goal of the data story is to show the path we have covered to get a sense of the confounding factors in movie job assignment and in what proportion successful actors impact the movie ratings.
 
-To use the Dinky theme:
+## Research questions
+### Which are the possible confounders to be tackled in assessing the characteristics of successful actors?
+* What defines the success of an actor?
+* How are movie ratings and successful actors related between each other?
+* How are networks of actors formed and do acting pairs show disparity in their success metrics?
 
-1. Add the following to your site's `_config.yml`:
+## Additional Datasets:
+1. [IMDb dataset](https://datasets.imdbws.com/): dataset with IMDb movie ratings as an additional metric for the measurement of movie success. We use:
+    -  'name.basics.tsv.gz' to get the list of actors and movies they starred in;
+    -  'title.basics.tsv' to get the genres associated to each movie;
+    -  'title.ratings.tsv' to obtain the ratings and the number of votes for each movie;
+    -  'title.akas.tsv.gz' to extract the regions associated with each movie;
+    -  'title.crew.tsv.gz' to get the names of the directors and their respective movies.
 
-    ```yml
-    remote_theme: pages-themes/dinky@v0.2.0
-    plugins:
-    - jekyll-remote-theme # add this line to the plugins list if you already have one
-    ```
+## Methods:
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+1. **Data pre-processing:**
+This part consisted in the clean up and merging of the data sets mentioned above into a single working dataframe for the analysis. This is particularly relevant due to the large amount of NaN values in the movie metadata and character metadata files of the CMU database, and to reduce the size of the massive IMDb database and make it suited to our interests and scopes. The output csv files FILE NAMES contain FILE CONTENT
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+2. **Data exploration and evaluation of interesting trends:**
+The available data are explored to identify patterns, trends, and relationships in the data, and to understand the overall structure and distribution of the data. Specifically, we used methods such as:
 
-## Customizing
+- Descriptive statistics: calculating basic statistics (e.g., median, mean, quantiles variance) to get a sense of the size and spread of the data;
+- Visualization: plots that can help identify trends (e.g., histograms, bar plots, scatter plots);
+- Data transformation: scaling, aggregation or filtering.
 
-### Configuration variables
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208996972-f1f62b9c-f3d2-454c-bb6b-c406f7052bb4.png">
 
-Dinky will respect the following variables, if set in your site's `_config.yml`:
+3. **Analysis and identification of possible confounding factors:**
+In movie job assignment there could possibly be many confounders that influence the probability of actors to become successful and to better impact the movie ratings. This section is dedicated to higlight what we believe are the main confounders and discuss how they may affect the success of an actor. The main influencing factors considered are:
+- **Actors gender**, due to possible disparities and biases in the job assignment;
+- **Movie genres**, due to the affinity of actors for specific genres (have you ever tought about Adam Sandler being perfectly suited for comedy or Anthony Hopkins to play the role of a villain?);
+- **Movie directors**, due to directors' preferences for specific actors (e.g., Quentin Tarantino for Brad Pitt or Samuel L. Jackson).
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
+4. **Observational study:**
+An observational study is conducted to try to quantify the effect that such confounders have on actors becoming successful and joining the 'rich-get-richer' circle, and on the impact that these actors have on the movie ratings. Propensity score matching is used to generate a balanced dataset (with perfect match on gender) of actors, where the treatment group are 'successful actors', namely the ones who star the most and are part of the circle. An analysis on the quality of the matching is performed, to understand how the matching process has affected the characteristics of the subjects in the study. This helps identifying the limitations of the study.
 
-Additionally, you may choose to set the following optional variables:
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208999090-1d7485d2-9904-4f97-af5c-bb05d386575e.png">
 
-```yml
-show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+5. **Piggybacking actors:**
+Going a step further with the study, we aim to tackle the fact that actors in the same movie cast benefit from the same movie ratings, even if they are less impactful in the movie. To do this, we compare career average ratings of casts of actors aiming to identify if one is 'piggybacking' on the other.
 
-### Stylesheet
+## Timeline
+**Week 9:** Submission of milestone 2 and finishing the preliminary analysis of the data along with tests of the methods mentioned above on a small sample from the databases;
 
-If you'd like to add your own custom styles:
+**Week 10:** Expansion of the analysis to the complete dataset of actors;
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+**Week 11:** Discuss the main counfounders in actors job assignment and start building up the observational study;
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+**Week 12:** Conduct the observational study and start a draft of the data story;
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+**Week 13:** Analyze the results of the investigation and argue about its possible limits;
 
-### Layouts
+**Week 14:** Carry out 'piggybacking' actors study, refine data story and submit it.
 
-If you'd like to change the theme's HTML layout:
-
-1. For some changes such as a custom `favicon`, you can add custom files in your local `_includes` folder. The files [provided with the theme](https://github.com/pages-themes/dinky/tree/master/_includes) provide a starting point and are included by the [original layout template](https://github.com/pages-themes/dinky/blob/master/_layouts/default.html).
-2. For more extensive changes, [copy the original template](https://github.com/pages-themes/dinky/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-3. Create a file called `/_layouts/default.html` in your site
-4. Paste the default layout content copied in the first step
-5. Customize the layout as you'd like
-
-### Customizing Google Analytics code
-
-Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/head-custom-google-analytics.html` in your Jekyll site.
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/pages-themes/dinky/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
-
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
-
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
-
-## Roadmap
-
-See the [open issues](https://github.com/pages-themes/dinky/issues) for a list of proposed features (and known issues).
-
-## Project philosophy
-
-The Dinky theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
-
-## Contributing
-
-Interested in contributing to Dinky? We'd love your help. Dinky is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/dinky`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+## Organization Within the Team:
+The tasks of the project were mainly divided as shown below.
+     
+| Team Member | Task |
+| --- | ----------- |
+| Nawar Allabban | Analysis on co-acting and 'piggybacking' actors |
+| Isaac Battles | Data cleaning and pre-processing, Building the website |
+| Gabriele Furlan | Observational study, Impact regression |
+| Louis-Alexandre Leger | Detailed analysis of confounding factors in actors job assignment |
