@@ -2,6 +2,17 @@
 layout: default
 ---
 
+# The Star System
+Data story realized by:
+
+* **Nawar Allabban**
+* **Isaac Battles**
+* **Gabriele Furlan**
+* **Louis Leger-Alexandre**
+
+<p align="center">
+    <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208888987-9b8207f1-b668-40a4-b4d5-fb94af86d58e.jpg">
+
 # Introduction
 
 **Have you ever watched a movie because an actor was starring in it?** Good actors lead to good movies. The star system has started in Hollywood in the 1920s with the goal of exploiting the image of actors to promote movies and generate publicity. The project, based on the movies released in the US, aims at investigating the factors that make an actor successful and the confounders hidden in the process.
