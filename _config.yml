@@ -1,18 +1,5 @@
-theme: jekyll-theme-midnight
-title: The Star System
-description: An investigation of actors' impact on movie ratings
-markdown: GFM
-show_downloads: True
-navigation:
-  - title: Home
-    url: home
-  - title: Introduction
-    url: introduction
-  - title: What is IMDb?
-    url: imdb
-  - title: Rich-get-Richer Mechanism
-    url: rgr
-  - title: Confounding factors
-    url: confounders
-  - title: Observational Study
-    url: observational_study
+title: Dinky theme
+description: Dinky is a red hot theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-dinky
