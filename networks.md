@@ -1,0 +1,6 @@
+#Insert leo dicaprio meme above also this needs to be edited
+
+As mentioned above many confounders lie in the analysis of actors and their success. Preferred genres, directors, actor-actor relations, the effect of which could be assessed by looking into actor networks. The IMdB data set could be used to link starts together by folding corresponding bipartite graphs of actors-movies, actors-genres, and actors-directors.
+
+This analysis does not account for actors piggy backing on other more successful actors, a major confounder! Having an overview of such a phenomena is important but extremely difficult due to how it is related to various factors such as: actor-actor relations, their prefered genres, the directors they work with, and many more. 
+A way to tackle such a challenge is to utilise social networks within the acting field, and to try making sense of them. One can first look at a sample of the dataset available, say the top 10 actors  based on average grade sums. The network can be used to identify the actor they acted with the most through identifying the max weight edge created from folding an actor-movie bipartite graph onto actors. From there the discripancies between number of appearances and average grades tend to be clearley displayed?
