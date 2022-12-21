@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 theme: jekyll-theme-midnight
 title: The Star System
 description: An investigation of actors' impact on movie ratings
@@ -16,3 +17,13 @@ navigation:
     url: confounders
   - title: Observational Study
     url: observational_study
+=======
+title: Dinky theme
+description: Dinky is a red hot theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-dinky
+remote_theme: pages-themes/dinky@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+>>>>>>> 8ec8d84ad54b5b9670e35e4c68058026f12c92bd
