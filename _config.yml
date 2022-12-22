@@ -1,9 +1,5 @@
-title: Cayman Docs
-description: Cayman-Docs is a clean, responsive theme for GitHub Pages based documentation.
+title: Cayman theme
+description: Cayman is a clean, responsive theme for GitHub Pages.
 show_downloads: true
+google_analytics:
 theme: jekyll-theme-cayman
-navigation:
-  name_over_title: true
-  strip_par: true
-  sanitize: true
-  h_max: 3
