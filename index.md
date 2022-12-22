@@ -13,8 +13,8 @@ Data story realized by:
 <p align="center">
     <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208888987-9b8207f1-b668-40a4-b4d5-fb94af86d58e.jpg">
 
-# Introduction
 <a name="intro"></a>
+# Introduction
     
 **Have you ever watched a movie because an actor was starring in it?** Good actors lead to good movies. The star system has started in Hollywood in the 1920s with the goal of exploiting the image of actors to promote movies and generate publicity. The project, based on the movies released in the US, aims at investigating the factors that make an actor successful and the confounders hidden in the process.
 
@@ -27,9 +27,9 @@ Data story realized by:
 * What defines the success of an actor?
 * How are movie ratings and successful actors related between each other?
 * How are networks of actors formed and do acting pairs show disparity in their success metrics?
-
-# What is IMDb?
+    
 <a name="imdb"></a>
+# What is IMDb?
     
 To give a bit of context on the available data and which ones we used to develop our data story, we provide some background about the used dataset. It is worth mentioning that our initial bases was the CMU dataset, that we decided to expand to the **IMDb dataset**, because it makes the study more effective and representative, given the way larger amount of data. The Internet Movie Database (IMDb) is a dataset containing information about movie titles, release dates, actors, ratings etc., founded in 1990 and then transferred to the Web in 1993. **The dataset contains more than 10 million titles from all over the world** and it is often used in research and development projects related to data analysis, machine learning, and natural language processing, as it provides a large and comprehensive set of data that can be used to train and test algorithms. **The focus of the present analysis is the region of the United States**, namely we are considering movies released in the US.
 
@@ -38,6 +38,7 @@ To give a bit of context on the available data and which ones we used to develop
 
 Specifically, IMDb is divided into sub-sets of data, each containing different information about the movie industry, and linkable one to the other through predefined ids. The sub-sets we used are: **'title.akas.tsv.gz'** containing movie titles and regions of release, **'name.basics.tsv.gz'** containing the list of actors and the respective movies they starred in, **'title.crew.tsv.gz'** with the names of the directors for each movie, **'title.ratings.tsv.gz'** with the list of movies ratings and number of votes, and **'title.basics.tsv.gz'**, containing the genres of the movies. All the cited datasets were cleaned and merged to extract the features of interest for the analysis.
 
+<a name="rgr"></a>
 # Rich-get-Richer Mechanism
 
 In this section we analyze the distributions of significant parameters to assess actor success and we give a possible explanation for such behaviors. It is indeed interesting to qualitatively understand **why actors' success can be influenced by external factors** and not only by the quality of the actors' work.
@@ -65,6 +66,7 @@ This mechanism makes it difficult to quantify the impact of actors on movies, be
 
 [1] D. Easley and J. Kleinberg, Networks, Crowds, and Markets: Reasoning about a Highly Connected World, Cambridge University Press, 2010.
 
+<a name="conf"></a>
 # Studied Confounders
 
 In order to study the effects of an actor's career average grade on his ability to join the "rich-get-richer" acting loop, we have hypothesized **3 main confounders**: the gender of actor's starring movie, the behind the scenes contributors (such as the director) to a movie and the gender of the actor. 
@@ -115,8 +117,9 @@ To verify if the difference is statistically significant, we perform a **Mann-Wh
 | ------------------- | --------- | ------- |
 | Mann-Whitney U test | 534502483.0 | 0.001   |
 
-    
+<a name="obs"></a>    
 # Observational Study
+
 Now that we have quantified what we believe are the main confounding factors in actors job assigment, we want to understand the merit of an actor in joining the rich-get-richer circle and its impact on the movie rating, therefore we carry out an observational study to **limit the effect of the confounders**. Actors are matched through **propensity score matching**, namely their probability of being part of the treatment group, based on observed covariates. The treatment group is defined by the most successful actors, while the control group by the rest of the actors' population.
 
 According to the **Pareto principle**, the **threshold between the number of appearances that dominate and the long tail of the power law distribution is defined by the 80/20 rule**. Basically, 20% of the people detain the most number of appearances. Therefore, the splitting of the dataset will be carried out based on the 80th percentile of the distribution, more representative than the mean or the median when considering skewed distributions.
