@@ -12,6 +12,10 @@ nav {
   margin-top: 50px;
 }
 
+nav {
+  background-color: #333;
+}
+
 table {
   margin: 0 auto;
 }
