@@ -279,7 +279,7 @@ We would like to **observe trends in the amount of actors which career average r
 
 As a remainder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
     
-It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, While **the percentage of control actors who only starred with treatment actors during their career reduces to 49%**. To check if the 'piggybacking actors' have a statistically significant difference in career rating with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
+It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, **the percentage of control actors who only starred with treatment actors during their career reduces to 49%**. To check if the 'piggybacking actors' have a statistically significant difference in career rating with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
 
 The results show that **the difference is indeed significant**.
     
