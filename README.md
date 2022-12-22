@@ -3,7 +3,7 @@ layout: default
 ---
 
 # The Star System
-
+The link to the data story is: https://gabf13.github.io/earthnet-website/ .
 
 ## Authors:
 Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
