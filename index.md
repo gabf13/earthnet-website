@@ -120,8 +120,8 @@ The data IMDb has provided on directors is quite rich & complex, as part of data
 
 
 > We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors when it comes to this network of directors. Same with Quentin Tarantino. This could be due to different time periods or perhaps an observable phenomenon which is the director-actor relationship and a director's cast retainment rate. 
-> We can define such a retainment rate as the as the rate of repeated actors per movie: 
-$$\frac{number\ of\ repeated\ actors}{number\ of\ movies}$$.
+> We can define such a **retainment rate (RR)** as the as the rate of repeated actors per movie: 
+$$RR = \frac{number\ of\ repeated\ actors}{number\ of\ movies}$$.
 
 <p align="center">
 <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045148-95d60ee7-5e3f-4811-bfce-f55b5abb61de.png">
