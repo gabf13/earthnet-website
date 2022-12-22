@@ -151,7 +151,7 @@ To verify if the difference is statistically significant, we perform a **Mann-Wh
 <a name="obs"></a>    
 # Observational Study
 
-Now that we have quantified what we believe are the main confounding factors in actors job assigment, we want to understand the merit of an actor in joining the rich-get-richer circle and its impact on the movie rating, therefore we carry out an observational study to **limit the effect of the confounders**. Actors are matched through **propensity score matching**, namely their probability of being part of the treatment group, based on observed covariates. The treatment group is defined by the most successful actors, while the control group by the rest of the actors' population.
+Now that we have qualitatively analyzed what we believe are the main confounding factors in actors job assigment, we want to understand the merit of an actor in joining the rich-get-richer circle and its impact on the movie rating, therefore we carry out an observational study to **limit the effect of the confounders**. Actors are matched through **propensity score matching**, namely their probability of being part of the treatment group, based on observed covariates. The treatment group is defined by the most successful actors, while the control group by the rest of the actors' population.
 
 According to the **Pareto principle**, the **threshold between the number of appearances that dominate and the long tail of the power law distribution is defined by the 80/20 rule**. Basically, 20% of the people detain the most number of appearances. Therefore, the splitting of the dataset will be carried out based on the 80th percentile of the distribution, more representative than the mean or the median when considering skewed distributions.
 
