@@ -7,6 +7,8 @@ layout: default
 ## Authors:
 Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
 
+Acknowledgment to our tutor Martin Josifoski for the precious advice.
+
 ## Abstract:
 
 Successful actors are able to make a living out of their acting career, and even if this seems normal for any other job, in the movie industry, a huge part of the actors' population are 'one-hit wonders', actors that starred only once and did not manage to make their career take off. A minority of actors, instead, detains most of the assigned jobs,and this generates a natural power law in actors' movie appearances. The goal of the data story is to show the path we have covered to get a sense of the confounding factors in movie job assignment and in what proportion successful actors impact the movie ratings.
