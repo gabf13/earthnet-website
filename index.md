@@ -268,7 +268,8 @@ The characterization of actors' impact on movie ratings was based on the **avera
 
 <a name="pb"></a>  
 # Piggybacking actors
-    
+
+### In the control group
 We would like to **observe trends in the amount of actors which career average rating is increased by other more successful actors who co-starred with them**. This can give us an idea of the limitations of the study and the assumptions taken.
     
 **We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**:
@@ -276,9 +277,9 @@ We would like to **observe trends in the amount of actors which career average r
 <p align="center">
     <img width="300" alt="correlation" src="https://user-images.githubusercontent.com/114060781/209059962-da403a2f-122d-40d2-8e2e-f5e81f1e9b50.png">
 
-As a remainder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
+As a reminder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
     
-It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, **the percentage of control actors who only starred with treatment actors during their career reduces to 49%**. To check if the 'piggybacking actors' have a statistically significant difference in career rating with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
+It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, **the percentage of control actors who only starred with treatment actors during their career is 49%**. To check if these 'piggybacking actors' have a statistically significant difference in career ratings with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
 
 The results show that **the difference is indeed significant**.
     
@@ -286,9 +287,17 @@ The results show that **the difference is indeed significant**.
 | ------------------- | --------- | ------- |
 | Mann-Whitney U test | 8115381 | 0  |
 
-Due to this, looking at potential piggy-backers in the treatment part of the balanced dataset also becomes of interest. Unlike the control group there is no other reference that can be used to address the issue, members of the treatment group would have to be compared within themselves. To do so a network of actors in the treatment group was constructed by projecting an actor-movie Bipartite plot onto the actors’ side. Each actor was then assigned a pair, based on who they are connected to the most in terms of co-appearances (measured through the number of edges). This led to 4008 actor pairs. Within those pairs the average grade rating obtained by each member in their solo career (excluding ones where they acted together), was calculated and the difference between the two was found.
+### In the treatment group
+**Looking at potential 'piggybackers' in the treatment part of the balanced dataset could also be of interest**. To do this, an **actor-movie bipartite network was constructed and projected onto the actors**. Each actor was then assigned a pair, based on who they are the most connected to (in terms of appearances). This led to **4069 actor pairs**. Within these pairs, we computed their **average career grade in the movies where they did NOT act together**. This is defined as their solo career average rating.
     
-Further analysis was done by performing a Mann-Whitney U statistical test on the solo average grade rating of the actors throughout their solo careers (excluding ones where they acted with their pair). Pairs who had p-value results less than a significance level of \alpha=0.05 could be assumed to contain someone who is piggy backing, since the null hypothesis assuming they share the same distribution is rejected. The piggy backer would then be named the actor with the lower solo average grade rating. This led to the identification of 980 piggy backers corresponding to 12.2% of the treatment group. The following Manhattan plot provides a visualization of the pairs shown to have a statistically significant difference in their average grade rating:
+Further analysis was done by performing a Mann-Whitney U statistical test **between the distributions of the solo career ratings of the actors, within the pair**, to verify if there is a statistically significant difference. Given that we are performing multiple hypothesis testing, the **significance threshold is adjusted using the Bonferroni correction**:
+    
+<p align="center">
+    <img width="400" alt="correlation" src = "https://user-images.githubusercontent.com/114060781/209107180-23e2e997-91dd-4671-9a17-da3307218a49.png">
+    
+with *alpha* being the corrected threshold, and *N* the number of simultaneously conducted tests.
+
+**Pairs with resulting p-value lower than a significance level can be assumed to contain someone who is 'piggybacking'**, since the null hypothesis that they share the same distribution is rejected. The 'piggybacker' would then be named the actor with the lower solo average rating. **This leads to the identification of 93 piggybackers, corresponding to 1.16% of the treatment group**. The following **Manhattan plot** provides a visualization of the pairs and the differences in their solo career ratings:
     
 <p align="center">
     <img width="1000" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209082989-4ef0ddf3-1837-4e03-a36f-b12cf7fb7098.png">
