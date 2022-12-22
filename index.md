@@ -1,6 +1,6 @@
 ---
 layout: default
-stylesheet: styles.css
+stylesheet: /assets/css/styles.css
 ---
 
 # The Star System
