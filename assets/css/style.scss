@@ -4,12 +4,16 @@
 @import 'jekyll-theme-cayman';
 
 :root {
-  --primary-color: midnightblue;
-  --secondary-color: white;
+  --primary-color: #636363;
+  --secondary-color: #0D98BA;
+  --tertiary-color: #ED665D;
+  --quaternary-color: #FECE44;
+  --quinary-color: #5BC0EB;
+  --senary-color: #A2D4AB;
 }
 
 body {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 a {
@@ -17,11 +21,11 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
 }
 
 button {
-  background-color: var(--secondary-color);
+  background-color: var(--quaternary-color);
   color: #fff;
 }
 
