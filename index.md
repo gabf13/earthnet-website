@@ -295,7 +295,7 @@ Further analysis was done by performing a Mann-Whitney U statistical test **betw
 <p align="center">
     <img width="100" alt="correlation" src = "https://user-images.githubusercontent.com/114060781/209107180-23e2e997-91dd-4671-9a17-da3307218a49.png">
     
-with *alpha* being the corrected threshold, and *N* the number of simultaneously conducted tests.
+with *alpha_c* being the corrected threshold, and *N* the number of simultaneously conducted tests.
 
 **Pairs with resulting p-value lower than a significance level can be assumed to contain someone who is 'piggybacking'**, since the null hypothesis that they share the same distribution is rejected. The 'piggybacker' would then be named the actor with the lower solo average rating. **This leads to the identification of 93 piggybackers, corresponding to 1.16% of the treatment group**. The following **Manhattan plot** provides a visualization of the pairs and the differences in their solo career ratings. The y axis shows the negative log of the p-values; **the data points above the significance level are the supposed pairs with 'piggybacking' actors**.
     
