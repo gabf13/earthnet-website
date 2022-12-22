@@ -10,7 +10,8 @@ In order to study the effects of an actor's career average grade on his ability 
 
 >We can see from the following bar plot the average imdb score per movie genre: that certain genres have higher average movie ratings than others.
 
-![genrebars](https://user-images.githubusercontent.com/95367976/209044730-35509e21-214c-4aa5-aca8-2e701b795e23.png)
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044730-35509e21-214c-4aa5-aca8-2e701b795e23.png">
 
 Moreover, we know that genres co-occur with each other, rarely does a movie have a single genre tag. (infact nana percent do). We can further explore these connections in between these genres by plotting the network of co-occurences between genres. How we have proceeded to do so is by creating a bipartite graph between actors and the 28 available genres and projecting it onto the genres. The obtained graph, plotted below is an unweighted undirected
 graph of co-occurences between genres, an edge between 2 genres signifies one same actor has starred in both genres therefore making a link between them.
