@@ -1,5 +1,6 @@
 ---
 layout: default
+stylesheet: styles.scss
 ---
 
 # The Star System
