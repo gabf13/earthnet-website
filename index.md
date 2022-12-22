@@ -270,7 +270,7 @@ We would like to **quantify the amount of actors which career average rating is 
     
 **We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**.
 
-$PP = \frac{movies\ with\ actor\ from\ treatment\ group}{movies\ without\ actors\ from\ the\ treatment\ group}*100$
+$PP = \frac{movies\ with\ actor\ from\ treatment\ group}{movies\ without\ actors\ from\ the\ treatment\ group} \cdot 100$
 
 As a remainder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
     
