@@ -2,22 +2,33 @@
 $large-breakpoint: 64em !default;
 $medium-breakpoint: 42em !default;
 
+// Body
+$body-bg-color: #181a1b !default;
+$scrollbar-bg-color: #2b2f31;
+$scrollbar-fg-color: #454a4d;
+
 // Headers
 $header-heading-color: #fff !default;
 $header-bg-color: #159957 !default;
 $header-bg-color-secondary: #155799 !default;
 
 // Text
-$section-headings-color: #159957 !default;
-$body-text-color: #606c71 !default;
-$body-link-color: #1e6bb8 !default;
+$section-headings-color: #67eaa9 !default;
+$body-text-color: #a6996b !default;
+$body-link-color: #56ace6 !default;
 $blockquote-text-color: #819198 !default;
 
 // Code
-$code-bg-color: #f3f6fa !default;
-$code-text-color: #567482 !default;
+$code-bg-color: #3c3b3b !default;
+$code-text-color: #a49c90 !default;
 
 // Borders
 $border-color: #dce6f0 !default;
-$table-border-color: #e9ebec !default;
-$hr-border-color: #eff0f1 !default;
+$blockquote-border-color: #0088cc !default;
+$table-border-color: #363a3d !default;
+$hr-border-color: #535353 !default;
+$highlight-border-color: #2b4a66 !default;
+
+// Highlight
+$highlight-bg-color: #222 !default;
+

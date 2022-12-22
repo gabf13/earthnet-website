@@ -1,5 +1,5 @@
 @import "normalize";
-@import "rouge-github";
+@import "molokai";
 @import "variables";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
@@ -23,6 +23,7 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-color: $scrollbar-fg-color $scrollbar-bg-color;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
+  background-color: $body-bg-color;
 }
 
 #skip-to-content {
@@ -110,6 +112,8 @@ a {
   text-align: center;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  position: relative;
+  z-index: 10;
 
   @include large {
     padding: 5rem 6rem;
@@ -159,6 +163,97 @@ a {
   }
 }
 
+.project-dir {
+  margin: .2rem;
+  font-weight: normal;
+  opacity: .7;
+  margin: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80vw;
+  white-space: nowrap;
+
+  a {
+    color: #f8f8f8;
+  } 
+
+  @include large {
+    font-size: 1.1rem;
+  }
+
+  @include medium {
+    font-size: 1rem;
+  }
+
+  @include small {
+    font-size: .9rem;
+  }
+}
+
+#sidebar {
+  position: absolute;
+  overflow: hidden;
+  max-height: 100%;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  
+  @include large {
+    font-size: 1.24em;
+    margin: 3.4rem 0 0 1rem;
+    max-width: 25vmax;
+  }
+  
+  @include medium {
+    font-size: 1.17em;
+    margin: 3.4rem 0 0 .3rem;
+    max-width: 21vmax;
+  }
+
+  @include small {
+    display: none;
+  }
+
+  li, ul {
+    list-style-type: none;
+    padding-left: 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  a {
+    padding: .1rem .5rem;
+    &:hover {
+      color: $section-headings-color;
+    }
+  }
+
+  .active {
+    visibility: visible;
+  }
+
+  .selected {
+    > a {
+      border-left: $header-bg-color solid 3px;
+      border-radius: 2px 6px 6px 2px;
+      background-color: fade-out($header-bg-color, 0.85);
+    }
+    > ul {
+      display: block;
+      visibility: visible;
+    }
+  }
+}
+
+.main-wrapper {
+  @include large {
+    margin-left: 15rem;
+  }
+
+  @include medium {
+    margin-left: 10rem;
+  }
+}
+
 .main-content {
   word-wrap: break-word;
 
@@ -182,14 +277,32 @@ a {
     padding: 2rem 1rem;
     font-size: 1rem;
   }
+
+  #content-wrapper .heading-anchor {
+    transition-duration: 400ms;
+    text-decoration-style: dashed;
+    font-size: 1.14em;
+
+    &:hover {
+      color: lighten($body-link-color, 15)
+    }
+
+    &:active {
+      color: $section-headings-color;
+    }
+
+    &[selected=true] {
+      color: $body-link-color;
+    }
+  }
   
   kbd {
-    background-color: #fafbfc;
-    border: 1px solid #c6cbd1;
-    border-bottom-color: #959da5;
+    background-color: #212426;
+    border: 1px solid #3f4446;
+    border-bottom-color: #4f5659;
     border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #959da5;
-    color: #444d56;
+    box-shadow: inset 0 -1px 0 #868f99;
+    color: #bbb7b1;
     display: inline-block;
     font-size: 11px;
     line-height: 10px;
@@ -251,6 +364,9 @@ a {
 
   .highlight {
     margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    border-color: $highlight-border-color;
+    background-color: $highlight-bg-color;
 
     pre {
       margin-bottom: 0;
@@ -264,7 +380,6 @@ a {
     overflow: auto;
     font-size: 0.9rem;
     line-height: 1.45;
-    border-radius: 0.3rem;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -295,7 +410,7 @@ a {
     padding: 0 1rem;
     margin-left: 0;
     color: $blockquote-text-color;
-    border-left: 0.3rem solid $border-color;
+    border-left: 0.3rem solid $blockquote-border-color;
 
     > :first-child {
       margin-top: 0;
@@ -352,8 +467,8 @@ a {
 
 .site-footer {
   padding-top: 2rem;
-  margin-top: 2rem;
   border-top: solid 1px $hr-border-color;
+  margin-top: 1rem;
 
   @include large {
     font-size: 1rem;
