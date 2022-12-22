@@ -141,7 +141,7 @@ To verify if the difference is statistically significant, we perform a **Mann-Wh
   
 |                     | Statistic | p-value |
 | ------------------- | --------- | ------- |
-| Mann-Whitney U test | 534502483.0 | 0.001   |
+| Mann-Whitney U test | 534502483 | 0.001   |
 
 <a name="obs"></a>    
 # Observational Study
@@ -262,4 +262,22 @@ The characterization of actors' impact on movie ratings was based on the **avera
 * Moreover, the **IMDb dataset of the US region is sufficiently large**. Indeed, even if an actor with high number of appearances raised his average ratings at the expenses of other actors in one movie, the **large amount of present data points contributes to perform a correction over his/her career**.
     
 * To investigate the limitations of this approach, the following section aims to build up a network of actors and movies to identify co-acting trends (how often actors star together with other actors) with the goal of identifying the 'piggybacking' ones.
+
+<a name="pb"></a>  
+# Piggybacking actors
     
+We would like to **quantify the amount of actors which career average rating is increased by other more successful actors who co-starred with them**. This can give us an idea of the limitations of the study and the assumptions taken.
+    
+**We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**.
+
+$PP = \frac{movies\ with\ actor\ from\ treatment\ group}{movies\ without\ actors\ from\ the\ treatment\ group}*100$
+
+As a remainder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
+    
+It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, While **the percentage of control actors who only starred with treatment actors during their career reduces to 49%**. To check if the 'piggybacking actors' have a statistically significant difference in career rating with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
+
+The results show that **the difference is indeed significant**.
+    
+|                     | Statistic | p-value |
+| ------------------- | --------- | ------- |
+| Mann-Whitney U test | 8115381 | 0  |
