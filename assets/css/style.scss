@@ -3,6 +3,28 @@
 
 @import 'jekyll-theme-cayman';
 
+:root {
+  --primary-color: midnightblue;
+  --secondary-color: orangered;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
 nav {
   position: fixed;
   top: 0;
