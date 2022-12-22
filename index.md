@@ -120,7 +120,8 @@ The data IMDb has provided on directors is quite rich & complex, as part of data
 
 
 > We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors when it comes to this network of directors. Same with Quentin Tarantino. This could be due to different time periods or perhaps an observable phenomenon which is the director-actor relationship and a director's cast retainment rate. 
-> We can define such a retainment rate as the as the rate of repeated actors per movie: $$\frac{number\ of\ repeated\ actors}{number\ of\ movies}$$.
+> We can define such a retainment rate as the as the rate of repeated actors per movie: 
+$$\frac{number\ of\ repeated\ actors}{number\ of\ movies}$$.
 
 <p align="center">
 <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045148-95d60ee7-5e3f-4811-bfce-f55b5abb61de.png">
@@ -268,7 +269,7 @@ The characterization of actors' impact on movie ratings was based on the **avera
     
 We would like to **quantify the amount of actors which career average rating is increased by other more successful actors who co-starred with them**. This can give us an idea of the limitations of the study and the assumptions taken.
     
-**We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**.
+**We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**:
 
 $$PP = \frac{movies\ with\ actor\ from\ treatment\ group}{movies\ without\ actors\ from\ the\ treatment\ group} \cdot 100$$
 
