@@ -291,10 +291,9 @@ Due to this, looking at potential piggy-backers in the treatment part of the bal
 Further analysis was done by performing a Mann-Whitney U statistical test on the solo average grade rating of the actors throughout their solo careers (excluding ones where they acted with their pair). Pairs who had p-value results less than a significance level of \alpha=0.05 could be assumed to contain someone who is piggy backing, since the null hypothesis assuming they share the same distribution is rejected. The piggy backer would then be named the actor with the lower solo average grade rating. This led to the identification of 980 piggy backers corresponding to 12.2% of the treatment group. The following Manhattan plot provides a visualization of the pairs shown to have a statistically significant difference in their average grade rating:
     
 <p align="center">
-    <img width="1000" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209078739-b7b88001-9432-4f8a-9c1d-8180b824eca9.png">
+    <img width="1000" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209082989-4ef0ddf3-1837-4e03-a36f-b12cf7fb7098.png">
 
    
-    
 As the piggy-backers were identified within the treatment group, a sanity check would be to assess the statsitical significance of another Mann-Whitney U test, this time conducted on the average grade rating of all the piggy-backers, and that of the rest of the treatment group. The results show that the distributions are different, with a p-value of nearly nul: 
 |                     | Statistic | p-value |
 | ------------------- | --------- | ------- |
