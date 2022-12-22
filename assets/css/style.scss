@@ -36,15 +36,6 @@ nav ul li ul {
   background-color: #333;
 }
 
-nav ul li a {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-nav ul li:hover a {
-  opacity: 1;
-}
-
 nav ul li ul li {
   float: none;
 }
