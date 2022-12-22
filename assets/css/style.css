@@ -11,3 +11,7 @@ nav {
   z-index: 1;
   margin-top: 50px;
 }
+
+table {
+  margin: 0 auto;
+}
