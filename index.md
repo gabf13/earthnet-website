@@ -93,10 +93,10 @@ For a weight threshold of 50 thousand co-occurences, we obtain the following:
  <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044843-c3818f44-cfda-4c12-b550-9f9c2585cb3f.png">
 
 
-As we decrease the weight threshold for adding edges, we see that there are more interconnections between diverse genres and as we augment this threshhold we see that these interconnections are only pertinent and converge on the Drama genre (highest degree node). 
-These network observations on the genre co-occurences could lead one to believe that being in a Drama genre movie is an important covariate & confounder for study of actors. However, we cannot conclude this or the reasoning that getting into drama will be a rich connected hub that will let you branch into different genres but we can see it as the most versatile genre tag movies in our dataset have.
+As we decrease the weight threshold for adding edges, **we see that there are more interconnections between diverse genres** and as we augment this threshhold we see that these interconnections are only pertinent and converge on the **Drama genre** (highest degree node). 
+These network observations on the genre co-occurences could lead one to believe that being in a Drama genre movie is an important covariate and confounder for the study of actors. However, **we cannot conclude this or the reasoning that getting into drama will be a rich connected hub** that will let you branch into different genres but **we can see it as the most versatile genre tag in movies** that our dataset has.
 
-In fact, we have a time order problem, analogous to the homophily vs influence debate on obesity, where, from an actor's point of view, we dont know if getting into Drama lets you branch out to different genres or getting into almost any film genre forces you into drama movies at some point in actor careers.
+In fact, we have a time order problem, **analogous to the homophily vs influence debate on obesity**, where, from an actor's point of view, it is not clear if getting into Drama will allow him to explore different genres or getting into almost any film genre will force him into drama movies at some point in his career.
 
 The following bar plots are from obtained from the networking:
 
@@ -105,12 +105,12 @@ The following bar plots are from obtained from the networking:
 
 ### Directors preferences
 
-Another confounder we looked at is the director's of a movie, it is no secret that starring in a Quentin Tarantino or Stanley Kubrick movie bodes well for a actor's career IMDb grades. Directors are therefore a driving force and a direct confounder in proving the star system. We can see this from the following plot showing the different IMDb grade averages for every director, sorted by this average:
+Another factor we looked at is the director's of a movie, it is no secret that starring in a Quentin Tarantino or Stanley Kubrick movie bodes well for an actor's career IMDb grades. **Directors are therefore a driving force and a direct confounder in proving the star system**. We can see this from the following plot showing the different IMDb grade averages for every director, sorted by this average:
 
 <p align="center">
  <img width="500" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044885-14631c82-f739-445c-a4a5-cb4703529c58.png">
 
-The data IMDb has provided on directors is quite rich & complex, as part of data exploration & to further understand the director's choice as a confounder, we have built a similar network to our previous genre co-occurences network but this time showing the director's that share similar casts of actors. This has been built by computing the edge list of the bipartite graph between actors & directors and then projecting it onto directors. Once again this is a weighted graph with a weight thresh hold for adding an edge between directors and we have set this threshhold to the average number of actors per cast. We have run this on the top directors sorted by the product of number of movies & highest imdb grades. (which could be quantified as the most active & grade performing directors):
+The data IMDb has provided on directors is quite rich and complex, to further understand the director's choice of actors as a confounder, **we have built a network similar to our previous genre co-occurences network**. However, this time around it is showing the directors that share similar casts of actors. This has been built by computing the edge list of the bipartite graph between actors and directors, and then projecting it onto directors. Once again this is a weighted graph with a weight threshold for adding an edge between directors and this threshold has been set to 3 shared actors for visualization purposes. Because of the large number of directors in the dataset, **we have run this on an arbitrary list of the top 25 directors sorted by the product of their number of movies and highest IMDb grades** (which could be quantified as the most active and grade performing directors):
 
 <p align="center">
 <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045071-321dfa17-152b-4229-947b-e4a2f7cc1ce0.png">
@@ -119,8 +119,8 @@ The data IMDb has provided on directors is quite rich & complex, as part of data
 <img width="700" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045133-a52bc634-e6c4-45cb-a437-a496be560af7.png">
 
 
-> We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors when it comes to this network of directors. Same with Quentin Tarantino. This could be due to different time periods or perhaps an observable phenomenon which is the director-actor relationship and a director's cast retainment rate. 
-> We can define such a **retainment rate (RR)** as the as the rate of repeated actors per movie:
+> We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors. Same with Quentin Tarantino. **This could be due to different time periods of movie production** or perhaps an observable phenomenon which is the director-actor relationship that develops and a director's likelihood to hire the same actors. 
+> The latter can be defined as the **retainment rate (RR)** of directors, which is the ratio between repeated actors and the number of movies:
 
 <p align="center">
 <img width="446" alt="RRlatex" src="https://user-images.githubusercontent.com/95367976/209060805-172671ee-a856-4a3a-ad46-0be43f9fa7f0.png">
@@ -128,11 +128,11 @@ The data IMDb has provided on directors is quite rich & complex, as part of data
 
 <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045148-95d60ee7-5e3f-4811-bfce-f55b5abb61de.png">
 
->Finally, having computed this retainment rate, we can see that this actor director relationship is common practice and is intuitive as you are betting on your good horses by rehiring the same actors. This affinity for a director to reuse the same actors in multiple movies further illustrates how intricitely connected an actor and director's imdb grade sucess may be, it is clear therefore that the directors of the movie an actor is in is a direct confounder in the Star System, where top/star actors impact IMDB grades.
+> Finally, having computed the retainment rate, **we can see that this actor director relationship is common practice** (64% of directors with more than 1 movie). This affinity for a director to re-hire the same actors in multiple movies further illustrates how intricately connected an actor and his director's IMDb grade sucess may be. It is clear, therefore, that **the directors of the movie an actor stars in can be a direct confounder in the Star System**, where top/star actors impact IMDB ratings.
 
 ### Gender inequalities
 
-Lastly, it is fair to assume that gender can play an important role in actors job assigment. **The percentage of actresses in the dataset is 39%**. From the distribution of the appearances below, and from the bar plots showing the average appearances by gender in relation to their average movie ratings, **there seems to be a systematic difference between genders**, even if their average career movie ratings are similar.
+Lastly, it is also fair to assume that gender can play an important role in actors job assigment. **The percentage of actresses in the dataset is 39%**. From the distribution of the appearances below, and from the bar plots showing the average appearances by gender in relation to their average movie ratings, **there seems to be a systematic difference between genders**, even if their average career movie ratings are similar.
 
 <p align="center">
     <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208968368-e153250e-06d7-4b6b-9550-f55f3739f4d1.png">
