@@ -34,6 +34,11 @@ nav {
   margin-top: 50px;
 }
 
+nav ul li::before {
+  content: "\2795"; /* Unicode character for a plus sign */
+  font-size: 24px; /* double the default size */
+}
+
 nav a {
   color: #fff;
   font-family: 'Times New Roman', serif;
