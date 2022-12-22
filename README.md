@@ -4,10 +4,9 @@ layout: default
 
 # The Star System
 
+
 ## Authors:
 Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
-
-Acknowledgment to our tutor Martin Josifoski for the precious advice.
 
 ## Abstract:
 
@@ -79,3 +78,6 @@ The tasks of the project were mainly divided as shown below.
 | Isaac Battles | Data cleaning and pre-processing, Building the website |
 | Gabriele Furlan | Observational study, Impact regression |
 | Louis-Alexandre Leger | Detailed analysis of confounding factors in actors job assignment |
+    
+    
+Acknowledgment to our tutor Martin Josifoski for the precious advice.
