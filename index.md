@@ -293,7 +293,7 @@ The results show that **the difference is indeed significant**.
 Further analysis was done by performing a Mann-Whitney U statistical test **between the distributions of the solo career ratings of the actors, within the pair**, to verify if there is a statistically significant difference. Given that we are performing multiple hypothesis testing, the **significance threshold is adjusted using the Bonferroni correction**:
     
 <p align="center">
-    <img width="400" alt="correlation" src = "https://user-images.githubusercontent.com/114060781/209107180-23e2e997-91dd-4671-9a17-da3307218a49.png">
+    <img width="100" alt="correlation" src = "https://user-images.githubusercontent.com/114060781/209107180-23e2e997-91dd-4671-9a17-da3307218a49.png">
     
 with *alpha* being the corrected threshold, and *N* the number of simultaneously conducted tests.
 
