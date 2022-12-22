@@ -288,7 +288,7 @@ The results show that **the difference is indeed significant**.
 | Mann-Whitney U test | 8115381 | 0  |
 
 ### In the treatment group
-**Looking at potential 'piggybackers' in the treatment part of the balanced dataset could also be of interest**. To do this, an **actor-movie bipartite network was constructed and projected onto the actors**. Each actor was then assigned a pair, based on who they are the most connected to (in terms of appearances). This led to **4069 actor pairs**. Within these pairs, we computed their **average career grade in the movies where they did NOT act together**. This is defined as their solo career average rating.
+**Looking at potential 'piggybackers' in the treatment part of the balanced dataset could also be of interest**. To do this, an **actor-movie bipartite network was constructed and projected onto the actors**. Each actor was then assigned a pair, based on who they are the most connected to (in terms of appearances). This led to **3992 actor pairs**. Within these pairs, we computed their **average career grade in the movies where they did NOT act together**. This is defined as their solo career average rating.
     
 Further analysis was done by performing a Mann-Whitney U statistical test **between the distributions of the solo career ratings of the actors, within the pair**, to verify if there is a statistically significant difference. Given that we are performing multiple hypothesis testing, the **significance threshold is adjusted using the Bonferroni correction**:
     
@@ -297,7 +297,7 @@ Further analysis was done by performing a Mann-Whitney U statistical test **betw
     
 with *alpha_c* being the corrected threshold, and *N* the number of simultaneously conducted tests.
 
-**Pairs with resulting p-value lower than a significance level can be assumed to contain someone who is 'piggybacking'**, since the null hypothesis that they share the same distribution is rejected. The 'piggybacker' would then be named the actor with the lower solo average rating. **This leads to the identification of 93 piggybackers, corresponding to 1.16% of the treatment group**. The following **Manhattan plot** provides a visualization of the pairs and the differences in their solo career ratings. The y axis shows the negative log of the p-values; **the data points above the significance level are the supposed pairs with 'piggybacking' actors**.
+**Pairs with resulting p-value lower than a significance level can be assumed to contain someone who is 'piggybacking'**, since the null hypothesis that they share the same distribution is rejected. The 'piggybacker' would then be named the actor with the lower solo average rating. **This leads to the identification of 99 piggybackers, corresponding to 1.24% of the treatment group**. The following **Manhattan plot** provides a visualization of the pairs and the differences in their solo career ratings. The y axis shows the negative log of the p-values; **the data points above the significance level are the supposed pairs with 'piggybacking' actors**.
     
 <p align="center">
     <img width="1000" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209082989-4ef0ddf3-1837-4e03-a36f-b12cf7fb7098.png">
