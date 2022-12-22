@@ -1,117 +1,79 @@
-# The Cayman-Docs theme
+---
+layout: default
+---
 
-Cayman-Docs is a fork of the Jekyll theme [Cayman](https://github.com/pages-themes/cayman) for GitHub Pages. This theme was edited from the original Cayman to be more docs friendly; This is achieved by defaulting the layout on dark mode, adding content navigation, and friendly layer indention. Originally made for [coro-docs](https://bilal2453.github.io/coro-docs/).
+# The Star System
 
-![Thumbnail of Cayman](thumbnail.png)
+## Authors:
+Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
 
-## Todo
+## Abstract:
 
-1. Implementing heading indention.
-2. General styling enhancements.
-3. Add anchor element to next of each header.
-4. Do something with the original Cayman gemfiles.
-5. Make navigator style customizable through Sass variables.
+Successful actors are able to make a living out of their acting career, and even if this seems normal for any other job, in the movie industry, a huge part of the actors' population are 'one-hit wonders', actors that starred only once and did not manage to make their career take off. A minority of actors, instead, detains most of the assigned jobs,and this generates a natural power law in actors' movie appearances. The goal of the data story is to show the path we have covered to get a sense of the confounding factors in movie job assignment and in what proportion successful actors impact the movie ratings.
 
-## Usage
+## Research questions
+### Which are the possible confounders to be tackled in assessing the characteristics of successful actors?
+* What defines the success of an actor?
+* How are movie ratings and successful actors related between each other?
+* How are networks of actors formed and do acting pairs show disparity in their success metrics?
 
-To use the Cayman-Docs theme:
+## Additional Datasets:
+1. [IMDb dataset](https://datasets.imdbws.com/): dataset with IMDb movie ratings as an additional metric for the measurement of movie success. We use:
+    -  'name.basics.tsv.gz' to get the list of actors and movies they starred in;
+    -  'title.basics.tsv' to get the genres associated to each movie;
+    -  'title.ratings.tsv' to obtain the ratings and the number of votes for each movie;
+    -  'title.akas.tsv.gz' to extract the regions associated with each movie;
+    -  'title.crew.tsv.gz' to get the names of the directors and their respective movies.
 
-1. Add the following to your site's `_config.yml`:
+## Methods:
 
-    ```yml
-    remote_theme: Bilal2453/cayman-docs
-    ```
+1. **Data pre-processing:**
+This part consisted in the clean up and merging of the data sets mentioned above into a single working dataframe for the analysis. This is particularly relevant due to the large amount of NaN values in the movie metadata and character metadata files of the CMU database, and to reduce the size of the massive IMDb database and make it suited to our interests and scopes. The output csv files FILE NAMES contain FILE CONTENT
 
-## Customizing
+2. **Data exploration and evaluation of interesting trends:**
+The available data are explored to identify patterns, trends, and relationships in the data, and to understand the overall structure and distribution of the data. Specifically, we used methods such as:
 
-### Configuration variables
+- Descriptive statistics: calculating basic statistics (e.g., median, mean, quantiles variance) to get a sense of the size and spread of the data;
+- Visualization: plots that can help identify trends (e.g., histograms, bar plots, scatter plots);
+- Data transformation: scaling, aggregation or filtering.
 
-Cayman will respect the following variables, if set in your site's `_config.yml`:
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208996972-f1f62b9c-f3d2-454c-bb6b-c406f7052bb4.png">
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
+3. **Analysis and identification of possible confounding factors:**
+In movie job assignment there could possibly be many confounders that influence the probability of actors to become successful and to better impact the movie ratings. This section is dedicated to higlight what we believe are the main confounders and discuss how they may affect the success of an actor. The main influencing factors considered are:
+- **Actors gender**, due to possible disparities and biases in the job assignment;
+- **Movie genres**, due to the affinity of actors for specific genres (have you ever tought about Adam Sandler being perfectly suited for comedy or Anthony Hopkins to play the role of a villain?);
+- **Movie directors**, due to directors' preferences for specific actors (e.g., Quentin Tarantino for Brad Pitt or Samuel L. Jackson).
 
-Additionally, you may choose to set the following optional variables:
+4. **Observational study:**
+An observational study is conducted to try to quantify the effect that such confounders have on actors becoming successful and joining the 'rich-get-richer' circle, and on the impact that these actors have on the movie ratings. Propensity score matching is used to generate a balanced dataset (with perfect match on gender) of actors, where the treatment group are 'successful actors', namely the ones who star the most and are part of the circle. An analysis on the quality of the matching is performed, to understand how the matching process has affected the characteristics of the subjects in the study. This helps identifying the limitations of the study.
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208999090-1d7485d2-9904-4f97-af5c-bb05d386575e.png">
 
-Cayman-Docs also provides additional variables to control varies stuff, such as:
+5. **Piggybacking actors:**
+Going a step further with the study, we aim to tackle the fact that actors in the same movie cast benefit from the same movie ratings, even if they are less impactful in the movie. To do this, we compare career average ratings of casts of actors aiming to identify if one is 'piggybacking' on the other.
 
-- Navigation and Table of Contents generation:
-```yml
-navigation:
-  name_over_title: [true or false to indicate whether to use the page file name instead of title in the header navigator]
-  toc_parameter: [all toc module parameters can be optionally passed over here]
-```
+## Timeline
+**Week 9:** Submission of milestone 2 and finishing the preliminary analysis of the data along with tests of the methods mentioned above on a small sample from the databases;
 
-### Table of Content parameters
+**Week 10:** Expansion of the analysis to the complete dataset of actors;
 
-  * sanitize      (bool)   : false  - when set to true, the headers will be stripped of any HTML in the TOC
-  * class         (string) :   ''   - a CSS class assigned to the TOC
-  * id            (string) :   ''   - an ID to assigned to the TOC
-  * h_min         (int)    :   1    - the minimum TOC header level to use; any header lower than this value will be ignored
-  * h_max         (int)    :   6    - the maximum TOC header level to use; any header greater than this value will be ignored
-  * ordered       (bool)   : false  - when set to true, an ordered list will be outputted instead of an unordered list
-  * item_class    (string) :   ''   - add custom class(es) for each list item; has support for '%level%' placeholder, which is the current heading level
-  * submenu_class (string) :   ''   - add custom class(es) for each child group of headings; has support for '%level%' placeholder which is the current "submenu" heading level
-  * base_url      (string) :   ''   - add a base url to the TOC links for when your TOC is on another page than the actual content
-  * anchor_class  (string) :   ''   - add custom class(es) for each anchor element
-  * skip_no_ids   (bool)   : false  - skip headers that do not have an `id` attribute
-  * strip_par     (bool)   : false  - strips any parenthesis at the end of title. E.x: `find(str, index)` -> `find`.
+**Week 11:** Discuss the main counfounders in actors job assignment and start building up the observational study;
 
-### Stylesheet
+**Week 12:** Conduct the observational study and start a draft of the data story;
 
-If you'd like to add your own custom styles:
+**Week 13:** Analyze the results of the investigation and argue about its possible limits;
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+**Week 14:** Carry out 'piggybacking' actors study, refine data story and submit it.
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
-
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original default template](https://github.com/Bilal2453/cayman-docs/blob/master/_layouts/default.html) or [the documentation layout page](https://github.com/Bilal2453/cayman-docs/blob/master/_layouts/doc.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` (or `/_layouts/doc.html`) in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/Bilal2453/cayman-docs/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
-
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
-
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/Bilal2453/cayman-docs`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+## Organization Within the Team:
+The tasks of the project were mainly divided as shown below.
+     
+| Team Member | Task |
+| --- | ----------- |
+| Nawar Allabban | Analysis on co-acting and 'piggybacking' actors |
+| Isaac Battles | Data cleaning and pre-processing, Building the website |
+| Gabriele Furlan | Observational study, Impact regression |
+| Louis-Alexandre Leger | Detailed analysis of confounding factors in actors job assignment |
