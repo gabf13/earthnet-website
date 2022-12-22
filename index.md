@@ -123,11 +123,10 @@ The data IMDb has provided on directors is quite rich & complex, as part of data
 > We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors when it comes to this network of directors. Same with Quentin Tarantino. This could be due to different time periods or perhaps an observable phenomenon which is the director-actor relationship and a director's cast retainment rate. 
 > We can define such a **retainment rate (RR)** as the as the rate of repeated actors per movie:
 
-<math display="block">
-$$RR = \frac{number\ of\ repeated\ actors}{number\ of\ movies}$$.
-</math>
-    
 <p align="center">
+<img width="446" alt="RRlatex" src="https://user-images.githubusercontent.com/95367976/209060805-172671ee-a856-4a3a-ad46-0be43f9fa7f0.png">
+    
+
 <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045148-95d60ee7-5e3f-4811-bfce-f55b5abb61de.png">
 
 >Finally, having computed this retainment rate, we can see that this actor director relationship is common practice and is intuitive as you are betting on your good horses by rehiring the same actors. This affinity for a director to reuse the same actors in multiple movies further illustrates how intricitely connected an actor and director's imdb grade sucess may be, it is clear therefore that the directors of the movie an actor is in is a direct confounder in the Star System, where top/star actors impact IMDB grades.
