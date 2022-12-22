@@ -14,7 +14,6 @@ Data story realized by:
     <img width="600" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208888987-9b8207f1-b668-40a4-b4d5-fb94af86d58e.jpg">
 
 # Introduction
-<a name="introduction"></a>
     
 **Have you ever watched a movie because an actor was starring in it?** Good actors lead to good movies. The star system has started in Hollywood in the 1920s with the goal of exploiting the image of actors to promote movies and generate publicity. The project, based on the movies released in the US, aims at investigating the factors that make an actor successful and the confounders hidden in the process.
 
@@ -29,7 +28,6 @@ Data story realized by:
 * How are networks of actors formed and do acting pairs show disparity in their success metrics?
 
 # What is IMDb?
-<a name="imdb"></a>
 To give a bit of context on the available data and which ones we used to develop our data story, we provide some background about the used dataset. It is worth mentioning that our initial bases was the CMU dataset, that we decided to expand to the **IMDb dataset**, because it makes the study more effective and representative, given the way larger amount of data. The Internet Movie Database (IMDb) is a dataset containing information about movie titles, release dates, actors, ratings etc., founded in 1990 and then transferred to the Web in 1993. **The dataset contains more than 10 million titles from all over the world** and it is often used in research and development projects related to data analysis, machine learning, and natural language processing, as it provides a large and comprehensive set of data that can be used to train and test algorithms. **The focus of the present analysis is the region of the United States**, namely we are considering movies released in the US.
 
 <p align="center">
