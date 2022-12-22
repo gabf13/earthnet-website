@@ -5,3 +5,7 @@ nav {
   right: 0;
   z-index: 1;
 }
+
+body {
+  padding-top: 50px; /* Adjust this value to the height of your navigation menu */
+}
