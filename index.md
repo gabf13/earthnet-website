@@ -8,7 +8,7 @@ Data story realized by:
 * **Nawar Allabban**
 * **Isaac Battles**
 * **Gabriele Furlan**
-* **Louis Leger-Alexandre**
+* **Louis-Alexandre Leger**
 
 <a name="intro"></a>
 # Introduction
