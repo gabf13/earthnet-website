@@ -65,11 +65,11 @@ This mechanism makes it difficult to quantify the impact of actors on movies, be
 [1] D. Easley and J. Kleinberg, Networks, Crowds, and Markets: Reasoning about a Highly Connected World, Cambridge University Press, 2010.
 
 <a name="conf"></a>
-# Studied Confounders
+# Confounding factors
 
 In order to study the effects of an actor's career average grade on his ability to join the "rich-get-richer" acting loop, we have hypothesized **3 main confounders**: the gender of actor's starring movie, the behind the scenes contributors (such as the director) to a movie and the gender of the actor. 
 
-### The Confounder of Movie Genres
+### Movie Genres bias
 
 >We can see from the following bar plot the average imdb score per movie genre: that certain genres have higher average movie ratings than others.
 
@@ -103,9 +103,9 @@ The following bar plots are from obtained from the networking:
 <p align="center">
  <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044867-1cef4b91-b475-426b-bbf4-8910b52a08fb.png">
 
-### The Confounder of Directors
+### Directors preferences
 
-Another confounder we looked at is the director's of a movie, it is no secret that starring in a Quentin Tarantino or Stanley Kubrick movie bodes well for a actor's career IMDB grades. Directors are therefore a driving force and a direct confounder in proving the star system. We can see this from the following plot showing the different IMDB grade averages for every director, sorted by this average:
+Another confounder we looked at is the director's of a movie, it is no secret that starring in a Quentin Tarantino or Stanley Kubrick movie bodes well for a actor's career IMDb grades. Directors are therefore a driving force and a direct confounder in proving the star system. We can see this from the following plot showing the different IMDb grade averages for every director, sorted by this average:
 
 <p align="center">
  <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044885-14631c82-f739-445c-a4a5-cb4703529c58.png">
@@ -120,14 +120,14 @@ The data IMDB has provided on directors is quite rich & complex, as part of data
 
 
 > We can see here that there are many directors such as Stanley Kubrick that have relatively (edge size) little to no connections with other directors in terms of shared actors when it comes to this network of directors. Same with Quentin Tarantino. This could be due to different time periods or perhaps an observable phenomenon which is the director-actor relationship and a director's cast retainment rate. 
-> We can define such a retainment rate as the as the rate of repeated actors per movie: $$\dfrac{number \: of \: repeated \: actors}{number \: of \: movies}$$
+> We can define such a retainment rate as the as the rate of repeated actors per movie: $\frac{number\ of\ repeated\ actors}{number\ of\ movies}$
 
 <p align="center">
 <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209045148-95d60ee7-5e3f-4811-bfce-f55b5abb61de.png">
 
 >Finally, having computed this retainment rate, we can see that this actor director relationship is common practice and is intuitive as you are betting on your good horses by rehiring the same actors. This affinity for a director to reuse the same actors in multiple movies further illustrates how intricitely connected an actor and director's imdb grade sucess may be, it is clear therefore that the directors of the movie an actor is in is a direct confounder in the Star System, where top/star actors impact IMDB grades.
 
-### The Confounder of Gender
+### Gender inequalities
 
 Lastly, it is fair to assume that gender can play an important role in actors job assigment. **The percentage of actresses in the dataset is 39%**. From the distribution of the appearances below, and from the bar plots showing the average appearances by gender in relation to their average movie ratings, **there seems to be a systematic difference between genders**, even if their average career movie ratings are similar.
 
