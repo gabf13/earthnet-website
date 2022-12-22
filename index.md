@@ -271,14 +271,13 @@ The characterization of actors' impact on movie ratings was based on the **avera
 <a name="pb"></a>  
 # Piggybacking actors
     
-We would like to **quantify the amount of actors which career average rating is increased by other more successful actors who co-starred with them**. This can give us an idea of the limitations of the study and the assumptions taken.
+We would like to **observe trends in the amount of actors which career average rating is increased by other more successful actors who co-starred with them**. This can give us an idea of the limitations of the study and the assumptions taken.
     
 **We first focus on the control group**, and we try to understand **how many of these actors have an impactful rating because they co-starred with other successful actors (high appearances)**. To do this, we compute the number of movies where each actor from the control group starred with at least one actor from the treatment group, and we define a **piggybacking percentage (PP)**:
 
-<math display="block">
-$$PP = \frac{movies\ with\ actor\ from\ treatment\ group}{movies\ without\ actors\ from\ the\ treatment\ group} \cdot 100$$
-</math>
-    
+<p align="center">
+    <img width="300" alt="correlation" src="https://user-images.githubusercontent.com/114060781/209059962-da403a2f-122d-40d2-8e2e-f5e81f1e9b50.png">
+
 As a remainder, this is based on the assumption that successful actors are actors who manage to join the rich-get-richer circle and keep starring.
     
 It is interesting to see that **the percentage of control actors who starred at least once with treatment actors is 88%**. Therefore, **most of the less successful actors seems to raise their rating impact because of others actors' success**. Meanwhile, While **the percentage of control actors who only starred with treatment actors during their career reduces to 49%**. To check if the 'piggybacking actors' have a statistically significant difference in career rating with the 'non-piggybacking' ones, **we perform a Mann-Whitney U test on the two distributions**.
