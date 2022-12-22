@@ -309,7 +309,8 @@ In this study, **we focused on assessing what are the potential confounders rela
     
 Eventually, to further assess the potential limitations of our analysis, we developed a strategy to address the confounder of actors impact on movies being boosted by other more successful actors. The study of this phenomenon, that we have dubbed as **"Piggybacking"**, aimed to quantify the amount of such actors in the overall population of actors. **Between less successful actors (control), the percentage of piggybacking actors ranges between 49% and 88%**, depending on the entity of the boost that they receive, while **for more successful actors (treatment), the percentage proved to be extremely low and equal to 1.16%**. ADD STATEMENT
     
-##Outlook and future directions
+## Outlook and future directions
+    
 Given the possible limitations of the study, and the impossibility to actually account for all the unobserved covariates, the authors advice for further investigation and refinement of the methodology used. Specifically:
     - increasing the number of features used for the propensity score matching could improve the quality of the matching;
     - estending the study to the overall population of actors, instead of the US movie region, could lead to more precise and significant results;
