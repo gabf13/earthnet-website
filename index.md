@@ -143,22 +143,6 @@ To verify if the difference is statistically significant, we perform a **Mann-Wh
 | ------------------- | --------- | ------- |
 | Mann-Whitney U test | 534502483.0 | 0.001   |
 
-### Gender biases
-
-Lastly, it is fair to assume that gender can play an important role in actors job assigment. **The percentage of actresses in the dataset is 39%**. From the distribution of the appearances below, and from the bar plots showing the average appearances by gender in relation to their average movie ratings, **there seems to be a systematic difference between genders**, even if their average career movie ratings are similar.
-
-<p align="center">
-    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208968368-e153250e-06d7-4b6b-9550-f55f3739f4d1.png">
-
-<p align="center">
-    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208997033-07e3cffe-5161-4379-8e02-ed5de6da456a.png">
-
-To verify if the difference is statistically significant, we perform a **Mann-Whitney U test on two distributions** and **we find that they are significantly different**, given the p-values lower than 0.05.
-  
-|                     | Statistic | p-value |
-| ------------------- | --------- | ------- |
-| Mann-Whitney U test | 534502483.0 | 0.001   |
-
 <a name="obs"></a>    
 # Observational Study
 
