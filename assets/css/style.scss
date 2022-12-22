@@ -12,8 +12,29 @@ nav {
   margin-top: 50px;
 }
 
-nav {
+nav a {
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+nav a:hover {
+  background-color: #555;
+  color: #eee;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
   background-color: #333;
+}
+nav ul li:hover ul {
+  display: block;
+}
+nav ul li ul li {
+  float: none;
+}
+nav ul li ul li a {
+  display: block;
 }
 
 table {
