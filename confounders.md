@@ -20,14 +20,14 @@ graph of co-occurences between genres, an edge between 2 genres signifies one sa
 As we can see from the graph, almost every genre is interconnected with every other genre. And from an actor's perspective acting we can see that the actor's in our IMDB dataset cover almost all of the combinations of genres that would connect different genres. This fact coupled with our initial genre-imdb grade disparity motivates Genres as a confounder in our study of an actor's success (proactivity).
     
 <p align="center">
-<img width="800" alt="correlation" src="[https://user-images.githubusercontent.com/114060781/208997033-07e3cffe-5161-4379-8e02-ed5de6da456a.png](https://user-images.githubusercontent.com/95367976/209044824-743a2912-c058-4e08-834e-2ee5206c2e76.png)">
+<img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044824-743a2912-c058-4e08-834e-2ee5206c2e76.png">
 
 To further illustrate the following point above we have manually computed the bipartite graph projection in order to obtain a similar graph with weighted edges. These weighted edges also have a minimum weight value thresh hold in order to be added as edges between 2 genres. The way we have manually computed this bipartite project is by computing the different combinations of genre tuples one actor has over the list of all the genres he or she has acted in their career. This new network graph allows us to see not only which genres are interconnected but the strength of those interconnections are. (How frequent do they co-occur in actor careers).
 
 For a weight thresh hold of 50 thousand co-occurences, We obtain the following: 
     
 <p align="center">
- <img width="800" alt="correlation" src="[https://user-images.githubusercontent.com/114060781/208997033-07e3cffe-5161-4379-8e02-ed5de6da456a.png](https://user-images.githubusercontent.com/95367976/209044843-c3818f44-cfda-4c12-b550-9f9c2585cb3f.png)">
+ <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/95367976/209044843-c3818f44-cfda-4c12-b550-9f9c2585cb3f.png">
 
 
 As we decrease the weight thresh hold for adding edges, we see that there are more interconnections between diverse genres and as we augment this threshhold we see that these interconnections are only pertinent and converge on the Drama genre (highest degree node). 
