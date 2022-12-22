@@ -50,12 +50,10 @@ We observed that the distribution of actors' careers number of movie appearances
 
 To statistically prove that the distribution follows a power law we perform a **Kolmogorov-Smirnov test on the tail of the distribution**. The results are here shown. Given the **p-values larger than 0.05** we cannot reject the null hypothesis that the distribution is exponential.
 <table style="margin: 0 auto;">
-  <!-- 
+
 | Dataset   | KS test  | p-value |
 | --------- | -------- | ------- |
 | Overall   | 0.32     | 0.11    |
- -->
-</table>
 
 An explanation for the **onset of a power law** can be given. Just as normal distributions arise from many independent random decisions averaging out, **power laws can arise from the feedback introduced by correlated decisions across a population** [1]. 
     
