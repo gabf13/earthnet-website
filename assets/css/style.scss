@@ -48,9 +48,16 @@ nav ul li ul {
   position: absolute;
   background-color: #333;
 }
-nav ul li:hover ul {
-  display: block;
+
+nav ul li a {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
+
+nav ul li:hover a {
+  opacity: 1;
+}
+
 nav ul li ul li {
   float: none;
 }
