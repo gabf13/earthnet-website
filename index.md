@@ -286,3 +286,13 @@ The results show that **the difference is indeed significant**.
 |                     | Statistic | p-value |
 | ------------------- | --------- | ------- |
 | Mann-Whitney U test | 8115381 | 0  |
+
+Due to this, looking at potential piggy-backers in the treatment part of the balanced dataset also becomes of interest. Unlike the control group there is no other reference that can be used to address the issue, members of the treatment group would have to be compared within themselves. To do so a network of actors in the treatment group was constructed by projecting an actor-movie Bipartite plot onto the actors’ side. Each actor was then assigned a pair, based on who they are connected to the most in terms of co-appearances (measured through the number of edges). This led to 4008 actor pairs. Within those pairs the average grade rating obtained by each member in their solo career (excluding ones where they acted together), was calculated and the difference between the two was found.
+    
+Further analysis was done by performing a Mann-Whitney U statistical test on the solo average grade rating of the actors throughout their solo careers (excluding ones where they acted with their pair). Pairs who had p-value results less than a significance level of \alpha=0.05 could be assumed to contain someone who is piggy backing, since the null hypothesis assuming they share the same distribution is rejected. The piggy backer would then be named the actor with the lower solo average grade rating. This led to the identification of 980 piggy backers corresponding to 12.2% of the treatment group. The following Manhattan plot provides a visualization of the pairs shown to have a statistically significant difference in their average grade rating:
+   
+    
+As the piggy-backers were identified within the treatment group, a sanity check would be to assess the statsitical significance of another Mann-Whitney U test, this time conducted on the average grade rating of all the piggy-backers, and that of the rest of the treatment group. The results show that the distributions are different, with a p-value of nearly nul: 
+|                     | Statistic | p-value |
+| ------------------- | --------- | ------- |
+| Mann-Whitney U test | 31146434 | 0  |
