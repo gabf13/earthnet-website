@@ -4,9 +4,13 @@ layout: default
 
 # The Star System
 The link to the data story is: https://gabf13.github.io/earthnet-website/ .
+The notebook 'Milestone3.ipynb', containing the jupyter notebook of the data story, is contained into the 'src' folder.
 
 ## Authors:
-Nawar Allabban, Isaac Battles, Gabriele Furlan, Louis-Alexandre Leger
+- Nawar Allabban
+- Isaac Battles
+- Gabriele Furlan
+- Louis-Alexandre Leger
 
 ## Abstract:
 
@@ -14,9 +18,10 @@ Successful actors are able to make a living out of their acting career, and even
 
 ## Research questions
 ### Which are the possible confounders to be tackled in assessing the characteristics of successful actors?
-* What defines the success of an actor?
-* How are movie ratings and successful actors related between each other?
-* How are networks of actors formed and do acting pairs show disparity in their success metrics?
+- What defines the success of an actor?
+- How are movie ratings and successful actors related between each other?
+- How are networks of actors formed and do acting pairs show disparity in their success metrics?
+- Are some actor's IMDB grades benefitting from acting with high profile actors?
 
 ## Additional Datasets:
 1. [IMDb dataset](https://datasets.imdbws.com/): dataset with IMDb movie ratings as an additional metric for the measurement of movie success. We use:
@@ -25,11 +30,15 @@ Successful actors are able to make a living out of their acting career, and even
     -  'title.ratings.tsv' to obtain the ratings and the number of votes for each movie;
     -  'title.akas.tsv.gz' to extract the regions associated with each movie;
     -  'title.crew.tsv.gz' to get the names of the directors and their respective movies.
+Given the massive size of the IMDb datasets and the GitHub upload limitations, only the cleaned datasets are provided into the 'data' folder.
 
 ## Methods:
 
 1. **Data pre-processing:**
-This part consisted in the clean up and merging of the data sets mentioned above into a single working dataframe for the analysis. This is particularly relevant due to the large amount of NaN values in the movie metadata and character metadata files of the CMU database, and to reduce the size of the massive IMDb database and make it suited to our interests and scopes. The output csv files FILE NAMES contain FILE CONTENT
+This part consisted in the clean up and merging of the data sets mentioned above into a single working dataframe for the analysis. This is particularly relevant due to the large amount of NaN values in the movie metadata and character metadata files of the CMU database, and to reduce the size of the massive IMDb database and make it suited to our interests and scopes. The output csv files are:
+
+- **'actors_us.csv'**, containing the cleaned list of actors from the US region, before the matching process;
+- **'balanced_df.csv'**, containing the balanced dataset of actors, after the propensity score matching.
 
 2. **Data exploration and evaluation of interesting trends:**
 The available data are explored to identify patterns, trends, and relationships in the data, and to understand the overall structure and distribution of the data. Specifically, we used methods such as:
@@ -54,7 +63,10 @@ An observational study is conducted to try to quantify the effect that such conf
     <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060781/208999090-1d7485d2-9904-4f97-af5c-bb05d386575e.png">
 
 5. **Piggybacking actors:**
-Going a step further with the study, we aim to tackle the fact that actors in the same movie cast benefit from the same movie ratings, even if they are less impactful in the movie. To do this, we compare career average ratings of casts of actors aiming to identify if one is 'piggybacking' on the other.
+Going a step further with the study, we aim to tackle the fact that actors in the same movie cast benefit from the same movie ratings, even if they are less impactful in the movie. To do this, we compare career average ratings of casts of actors aiming to identify if one is 'piggybacking' on the other. This is done through constructing a Bipartite graph of actors-movies which is then projected onto the actors of the treatment set, allowing for the identification of actors who appeared together the most. For those pairs, Mann-Whitney U tests where conducted to compare the average grade rating of their movies over their individual careers (excluding movies together). If the null hypothesis can be rejected one can infer that one of the actor is piggybacking of the other. 
+
+<p align="center">
+    <img width="800" alt="correlation" src="https://user-images.githubusercontent.com/114060536/209092953-7d7d932d-4a5f-4f13-98e4-d763d094a19b.png">
 
 ## Timeline
 **Week 9:** Submission of milestone 2 and finishing the preliminary analysis of the data along with tests of the methods mentioned above on a small sample from the databases;
@@ -80,4 +92,4 @@ The tasks of the project were mainly divided as shown below.
 | Louis-Alexandre Leger | Detailed analysis of confounding factors in actors job assignment |
     
     
-Acknowledgment to our tutor Martin Josifoski for the precious advice.
+Acknowledgment to our supervisor Martin Josifoski for the precious advice.
