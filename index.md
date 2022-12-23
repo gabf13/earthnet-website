@@ -300,7 +300,7 @@ with *alpha_c* being the corrected threshold, and *N* the number of simultaneous
 **Pairs with resulting p-value lower than a significance level can be assumed to contain someone who is 'piggybacking'**, since the null hypothesis that they share the same distribution is rejected. The 'piggybacker' would then be named the actor with the lower solo average rating. **This leads to the identification of 99 piggybackers, corresponding to 1.24% of the treatment group**. The following **Manhattan plot** provides a visualization of the pairs and the differences in their solo career ratings. The y axis shows the negative log of the p-values; **the data points above the significance level are the supposed pairs with 'piggybacking' actors**.
     
 <p align="center">
-    <img width="1000" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209082989-4ef0ddf3-1837-4e03-a36f-b12cf7fb7098.png">
+    <img width="1200" alt="correlation" src = "https://user-images.githubusercontent.com/95367976/209082989-4ef0ddf3-1837-4e03-a36f-b12cf7fb7098.png">
 
 <a name="conclusion"></a> 
 # Conclusion
