@@ -7,6 +7,8 @@ The link to the data story is: https://gabf13.github.io/earthnet-website/ .
 
 The notebook 'Milestone3.ipynb', containing the jupyter notebook of the data story, is contained into the 'src' folder.
 
+The 'data' folder contains the output csv files from the notebook, explained in detail below, and the CMU original dataset.
+
 ## Authors:
 - Nawar Allabban
 - Isaac Battles
